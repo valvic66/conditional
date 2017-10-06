@@ -1,14 +1,14 @@
 import React from 'react'
 
-export default class Btn extends React.Component {
-  getBtnCSSClasses () {
-    const classes = [this.props.classes || 'defaultBtnClass']
+export default class Button extends React.Component {
+  getCSSClasses () {
+    const classes = [this.props.classes || 'defaultButtonClass']
 
     return classes
   }
 
-  getBtnLabelCSSClasses () {
-    const classes = [this.props.btn_classes || 'defaultBtnLabelClass']
+  getLabelCSSClasses () {
+    const classes = [this.props.btn_classes || 'defaultButtonLabelClass']
 
     return classes
   }
@@ -21,11 +21,11 @@ export default class Btn extends React.Component {
     return (
       <div
         id={this.props.id}
-        className={this.getBtnCSSClasses()}
+        className={this.getCSSClasses()}
         onClick={(event) => this.handleClick(event)}
       >
         <div
-          className={this.getBtnLabelCSSClasses()}
+          className={this.getLabelCSSClasses()}
         >
           {this.props.label}
         </div>

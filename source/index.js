@@ -1,17 +1,16 @@
 import React from 'react'
 
 import Tags from './Tags'
-import Btn from './Btn'
+import Button from './Button'
 import Browser from './Browser'
 
 export default class Conditional extends React.Component {
   constructor (props) {
     super(props)
-    const options = this.props.options || []
-    const itemsPerSlide = this.props.itemsPerSlide || []
+    const { options, itemsPerSlide } = this.props
     const optionsNo = options.length
     const slidesNo = Math.ceil(optionsNo / itemsPerSlide)
-
+    
     this.state = {
       options: options.slice(),
       slideIndex: 1,
@@ -36,9 +35,7 @@ export default class Conditional extends React.Component {
     } else {
       slideIndex += 1
     }
-    this.setState({
-      slideIndex: slideIndex
-    })
+    this.setState({ slideIndex })
   }
 
   getOptions () {
@@ -65,10 +62,10 @@ export default class Conditional extends React.Component {
           onSelect={(value) => { console.log(`Selected value => ${value}`) }}
         />
 
-        <Btn
+        <Button
           id='btn1'
           label='NEXT STEP'
-          classes='defaultBtnClass'
+          classes='defaultButtonClass'
           onClick={(event) => { this.handleClick(event) }}
         />
 
