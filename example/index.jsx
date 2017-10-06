@@ -19,7 +19,7 @@ class App extends React.Component {
         <Conditional
           id='conditional1'
           classes='defaultConditionalClass'
-          itemsPerSlide={4}
+          itemsPerSlide={3}
           options={options}
 
         />

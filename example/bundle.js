@@ -120,6 +120,13 @@ var index = shouldUseNative() ? Object.assign : function (target, source) {
  */
 'use strict';
 
+/**
+ * WARNING: DO NOT manually require this module.
+ * This is a replacement for `invariant(...)` used by the error code system
+ * and will _only_ be required by the corresponding babel pass.
+ * It always throws.
+ */
+
 "use strict";
 
 /**
@@ -156,14 +163,6 @@ emptyFunction$1.thatReturnsArgument = function (arg) {
 };
 
 var emptyFunction_1 = emptyFunction$1;
-
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -219,14 +218,6 @@ var warning$1 = emptyFunction;
 }
 
 var warning_1 = warning$1;
-
-/**
- * Copyright (c) 2015-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -472,14 +463,6 @@ var lowPriorityWarning$2 = function () {};
 
 var lowPriorityWarning_1 = lowPriorityWarning$2;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var _assign$1 = index;
@@ -611,15 +594,6 @@ var ReactBaseClasses$1 = {
   Component: ReactComponent,
   PureComponent: ReactPureComponent
 };
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
 
 'use strict';
 
@@ -764,14 +738,6 @@ var ReactCurrentOwner_1 = ReactCurrentOwner$1;
 var REACT_ELEMENT_TYPE$1 = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('react.element') || 0xeac7;
 
 var ReactElementSymbol = REACT_ELEMENT_TYPE$1;
-
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -1201,14 +1167,6 @@ var KeyEscapeUtils$1 = {
 
 var KeyEscapeUtils_1 = KeyEscapeUtils$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var ReactCurrentOwner$2 = ReactCurrentOwner_1;
@@ -1372,14 +1330,6 @@ function traverseAllChildren$1(children, callback, traverseContext) {
 }
 
 var traverseAllChildren_1 = traverseAllChildren$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -1561,15 +1511,6 @@ var ReactChildren$1 = {
 };
 
 var ReactChildren_1 = ReactChildren$1;
-
-/**
- * Copyright (c) 2016-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
 
 'use strict';
 
@@ -1975,14 +1916,6 @@ var ReactPropTypesSecret$1 = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 var ReactPropTypesSecret_1 = ReactPropTypesSecret$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var ReactPropTypeLocationNames = ReactPropTypeLocationNames_1;
@@ -2057,21 +1990,6 @@ function checkReactTypeSpec$1(typeSpecs, values, location, componentName, elemen
 }
 
 var checkReactTypeSpec_1 = checkReactTypeSpec$1;
-
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
-/**
- * ReactElementValidator provides a wrapper around a element factory
- * which validates the props passed to the element. This is intended to be
- * used only in DEV and could be replaced by a static type checker for languages
- * that support it.
- */
 
 'use strict';
 
@@ -2311,14 +2229,6 @@ var ReactElementValidator$2 = {
 
 var ReactElementValidator_1 = ReactElementValidator$2;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var ReactElement$3 = ReactElement_1;
@@ -2491,13 +2401,6 @@ var ReactPropTypesSecret$3 = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 var ReactPropTypesSecret_1$2 = ReactPropTypesSecret$3;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 'use strict';
 
 {
@@ -2550,13 +2453,6 @@ function checkPropTypes$1(typeSpecs, values, location, componentName, getStack) 
 }
 
 var checkPropTypes_1 = checkPropTypes$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
 
 'use strict';
 
@@ -3094,13 +2990,6 @@ var factoryWithTypeCheckers = function(isValidElement, throwOnDirectAccess) {
   return ReactPropTypes;
 };
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 'use strict';
 
 // React 15.5 references this module, and assumes PropTypes are still callable in production.
@@ -3113,14 +3002,6 @@ var factory_1 = function(isValidElement) {
   var throwOnDirectAccess = false;
   return factory$1(isValidElement, throwOnDirectAccess);
 };
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -3142,14 +3023,6 @@ var ReactPropTypes$1 = factory(isValidElement);
 'use strict';
 
 var ReactVersion$1 = '15.6.2';
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -4012,14 +3885,6 @@ function factory$3(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
 
 var factory_1$2 = factory$3;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var _require$1 = ReactBaseClasses$1;
@@ -4033,13 +3898,6 @@ var factory$2 = factory_1$2;
 
 var createClass = factory$2(Component$1, isValidElement$1, ReactNoopUpdateQueue$2);
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 'use strict';
 
 var ReactElement$5 = ReactElement_1;
@@ -4066,14 +3924,6 @@ function onlyChild$1(children) {
 }
 
 var onlyChild_1 = onlyChild$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -4212,11 +4062,10 @@ var react = React_1;
 'use strict';
 
 /**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
+ * WARNING: DO NOT manually require this module.
+ * This is a replacement for `invariant(...)` used by the error code system
+ * and will _only_ be required by the corresponding babel pass.
+ * It always throws.
  */
 
 'use strict';
@@ -4431,14 +4280,6 @@ var ReactDOMComponentFlags$1 = {
 };
 
 var ReactDOMComponentFlags_1 = ReactDOMComponentFlags$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -4694,15 +4535,6 @@ var ARIADOMPropertyConfig$1 = {
 };
 
 var ARIADOMPropertyConfig_1 = ARIADOMPropertyConfig$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
 
 'use strict';
 
@@ -5020,14 +4852,6 @@ var ReactErrorUtils$2 = {
 
 var ReactErrorUtils_1 = ReactErrorUtils$2;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var ReactErrorUtils$1 = ReactErrorUtils_1;
@@ -5242,15 +5066,6 @@ var EventPluginUtils$2 = {
 
 var EventPluginUtils_1 = EventPluginUtils$2;
 
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
 'use strict';
 
 var invariant$14 = invariant_1;
@@ -5324,14 +5139,6 @@ function forEachAccumulated$2(arr, cb, scope) {
 }
 
 var forEachAccumulated_1 = forEachAccumulated$2;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -5595,14 +5402,6 @@ var EventPluginHub$1 = {
 
 var EventPluginHub_1 = EventPluginHub$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var EventPluginHub = EventPluginHub_1;
@@ -5761,15 +5560,6 @@ var ExecutionEnvironment$2 = {
 
 var ExecutionEnvironment_1 = ExecutionEnvironment$2;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
 'use strict';
 
 var invariant$15 = invariant_1;
@@ -5869,14 +5659,6 @@ var PooledClass$3 = {
 
 var PooledClass_1$2 = PooledClass$3;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var ExecutionEnvironment$3 = ExecutionEnvironment_1;
@@ -5899,14 +5681,6 @@ function getTextContentAccessor$1() {
 }
 
 var getTextContentAccessor_1 = getTextContentAccessor$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -5992,14 +5766,6 @@ _assign$4(FallbackCompositionState$1.prototype, {
 PooledClass$2.addPoolingTo(FallbackCompositionState$1);
 
 var FallbackCompositionState_1 = FallbackCompositionState$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -6260,14 +6026,6 @@ function getPooledWarningPropertyDefinition(propName, getVal) {
   }
 }
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var SyntheticEvent = SyntheticEvent_1;
@@ -6293,14 +6051,6 @@ function SyntheticCompositionEvent$1(dispatchConfig, dispatchMarker, nativeEvent
 SyntheticEvent.augmentClass(SyntheticCompositionEvent$1, CompositionEventInterface);
 
 var SyntheticCompositionEvent_1 = SyntheticCompositionEvent$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -6328,14 +6078,6 @@ function SyntheticInputEvent$1(dispatchConfig, dispatchMarker, nativeEvent, nati
 SyntheticEvent$2.augmentClass(SyntheticInputEvent$1, InputEventInterface);
 
 var SyntheticInputEvent_1 = SyntheticInputEvent$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -6711,15 +6453,6 @@ var BeforeInputEventPlugin$1 = {
 
 var BeforeInputEventPlugin_1 = BeforeInputEventPlugin$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
 'use strict';
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -6846,15 +6579,6 @@ var ReactFeatureFlags$1 = {
 
 var ReactFeatureFlags_1 = ReactFeatureFlags$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
 'use strict';
 
 var invariant$18 = invariant_1;
@@ -6935,15 +6659,6 @@ var ReactOwner$1 = {
 
 var ReactOwner_1 = ReactOwner$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
 'use strict';
 
 var ReactOwner = ReactOwner_1;
@@ -7022,15 +6737,6 @@ ReactRef$1.detachRefs = function (instance, element) {
 
 var ReactRef_1 = ReactRef$1;
 
-/**
- * Copyright (c) 2016-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
 'use strict';
 
 var warning$16 = warning_1;
@@ -7089,15 +6795,6 @@ var ReactHostOperationHistoryHook$1 = {
 
 var ReactHostOperationHistoryHook_1 = ReactHostOperationHistoryHook$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
-
 'use strict';
 
 var ExecutionEnvironment$6 = ExecutionEnvironment_1;
@@ -7141,15 +6838,6 @@ if (performance$1.now) {
 }
 
 var performanceNow_1 = performanceNow$1;
-
-/**
- * Copyright (c) 2016-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
 
 'use strict';
 
@@ -7501,15 +7189,6 @@ if (/[?&]react_perf\b/.test(url)) {
 
 var ReactDebugTool_1 = ReactDebugTool$1;
 
-/**
- * Copyright (c) 2016-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
 'use strict';
 
 // Trust the developer to only use ReactInstrumentation with a __DEV__ check
@@ -7522,14 +7201,6 @@ var debugTool = null;
 }
 
 var ReactInstrumentation$2 = { debugTool: debugTool };
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -7686,15 +7357,6 @@ var ReactReconciler$2 = {
 };
 
 var ReactReconciler_1 = ReactReconciler$2;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
 
 'use strict';
 
@@ -7910,14 +7572,6 @@ var TransactionImpl = {
 };
 
 var Transaction$1 = TransactionImpl;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -8159,14 +7813,6 @@ var ReactUpdates$2 = {
 
 var ReactUpdates_1 = ReactUpdates$2;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var ReactDOMComponentTree$4 = ReactDOMComponentTree_1;
@@ -8313,14 +7959,6 @@ function getEventTarget$1(nativeEvent) {
 
 var getEventTarget_1 = getEventTarget$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var ExecutionEnvironment$7 = ExecutionEnvironment_1;
@@ -8419,14 +8057,6 @@ function isTextInputElement$1(elem) {
 }
 
 var isTextInputElement_1 = isTextInputElement$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -8754,14 +8384,6 @@ var DefaultEventPluginOrder$1 = ['ResponderEventPlugin', 'SimpleEventPlugin', 'T
 
 var DefaultEventPluginOrder_1 = DefaultEventPluginOrder$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var SyntheticEvent$4 = SyntheticEvent_1;
@@ -8875,14 +8497,6 @@ function getEventModifierState$1(nativeEvent) {
 
 var getEventModifierState_1 = getEventModifierState$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var SyntheticUIEvent = SyntheticUIEvent_1;
@@ -8944,14 +8558,6 @@ function SyntheticMouseEvent$1(dispatchConfig, dispatchMarker, nativeEvent, nati
 SyntheticUIEvent.augmentClass(SyntheticMouseEvent$1, MouseEventInterface);
 
 var SyntheticMouseEvent_1 = SyntheticMouseEvent$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -9040,14 +8646,6 @@ var EnterLeaveEventPlugin$1 = {
 };
 
 var EnterLeaveEventPlugin_1 = EnterLeaveEventPlugin$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -9324,14 +8922,6 @@ var createMicrosoftUnsafeLocalFunction$3 = function (func) {
 
 var createMicrosoftUnsafeLocalFunction_1 = createMicrosoftUnsafeLocalFunction$3;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var ExecutionEnvironment$8 = ExecutionEnvironment_1;
@@ -9540,14 +9130,6 @@ function escapeTextContentForBrowser$1(text) {
 
 var escapeTextContentForBrowser_1 = escapeTextContentForBrowser$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var ExecutionEnvironment$9 = ExecutionEnvironment_1;
@@ -9589,14 +9171,6 @@ if (ExecutionEnvironment$9.canUseDOM) {
 }
 
 var setTextContent_1 = setTextContent$2;
-
-/**
- * Copyright (c) 2015-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -10006,14 +9580,6 @@ function createNodesFromMarkup$1(markup, handleScript) {
 
 var createNodesFromMarkup_1 = createNodesFromMarkup$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var DOMLazyTree$2 = DOMLazyTree_1;
@@ -10047,14 +9613,6 @@ var Danger$1 = {
 };
 
 var Danger_1 = Danger$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -10272,14 +9830,6 @@ var DOMChildrenOperations$1 = {
 
 var DOMChildrenOperations_1 = DOMChildrenOperations$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var DOMChildrenOperations$2 = DOMChildrenOperations_1;
@@ -10302,14 +9852,6 @@ var ReactDOMIDOperations$1 = {
 };
 
 var ReactDOMIDOperations_1 = ReactDOMIDOperations$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -10353,14 +9895,6 @@ function focusNode$1(node) {
 }
 
 var focusNode_1 = focusNode$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -10559,15 +10093,6 @@ function camelize$1(string) {
 
 var camelize_1 = camelize$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
-
 'use strict';
 
 var camelize = camelize_1;
@@ -10596,14 +10121,6 @@ function camelizeStyleName$1(string) {
 }
 
 var camelizeStyleName_1 = camelizeStyleName$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -10705,15 +10222,6 @@ function hyphenate$1(string) {
 
 var hyphenate_1 = hyphenate$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
-
 'use strict';
 
 var hyphenate = hyphenate_1;
@@ -10769,14 +10277,6 @@ function memoizeStringOnly$1(callback) {
 }
 
 var memoizeStringOnly_1 = memoizeStringOnly$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -10983,14 +10483,6 @@ var CSSPropertyOperations$1 = {
 
 var CSSPropertyOperations_1 = CSSPropertyOperations$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var escapeTextContentForBrowser$3 = escapeTextContentForBrowser_1;
@@ -11006,14 +10498,6 @@ function quoteAttributeValueForBrowser$1(value) {
 }
 
 var quoteAttributeValueForBrowser_1 = quoteAttributeValueForBrowser$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -11240,14 +10724,6 @@ var DOMPropertyOperations$1 = {
 
 var DOMPropertyOperations_1 = DOMPropertyOperations$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var EventPluginHub$4 = EventPluginHub_1;
@@ -11269,14 +10745,6 @@ var ReactEventEmitterMixin$1 = {
 };
 
 var ReactEventEmitterMixin_1 = ReactEventEmitterMixin$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -11368,14 +10836,6 @@ function getVendorPrefixedEventName$1(eventName) {
 }
 
 var getVendorPrefixedEventName_1 = getVendorPrefixedEventName$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -11706,14 +11166,6 @@ var ReactPropTypesSecret$6 = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 var ReactPropTypesSecret_1$4 = ReactPropTypesSecret$6;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var ReactPropTypesSecret$5 = ReactPropTypesSecret_1$4;
@@ -11839,14 +11291,6 @@ var LinkedValueUtils$1 = {
 };
 
 var LinkedValueUtils_1 = LinkedValueUtils$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -12124,14 +11568,6 @@ function _handleChange(event) {
 
 var ReactDOMInput_1 = ReactDOMInput$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var _assign$11 = index;
@@ -12322,14 +11758,6 @@ function _handleChange$1(event) {
 
 var ReactDOMSelect_1 = ReactDOMSelect$2;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var _assign$10 = index;
@@ -12441,14 +11869,6 @@ var ReactDOMOption$1 = {
 };
 
 var ReactDOMOption_1 = ReactDOMOption$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -12599,15 +12019,6 @@ function _handleChange$2(event) {
 
 var ReactDOMTextarea_1 = ReactDOMTextarea$1;
 
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
 'use strict';
 
 var invariant$29 = invariant_1;
@@ -12683,15 +12094,6 @@ var ReactInstanceMap$1 = {
 
 var ReactInstanceMap_1 = ReactInstanceMap$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
 'use strict';
 
 var React$5 = React_1;
@@ -12741,14 +12143,6 @@ var ReactPropTypeLocationNames$4 = {};
 }
 
 var ReactPropTypeLocationNames_1$2 = ReactPropTypeLocationNames$4;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -12930,14 +12324,6 @@ function shouldUpdateReactComponent$2(prevElement, nextElement) {
 }
 
 var shouldUpdateReactComponent_1 = shouldUpdateReactComponent$2;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -13834,14 +13220,6 @@ ReactEmptyComponent$1.injection = ReactEmptyComponentInjection;
 
 var ReactEmptyComponent_1 = ReactEmptyComponent$1;
 
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var invariant$34 = invariant_1;
@@ -13916,14 +13294,6 @@ function getNextDebugID$1() {
 }
 
 var getNextDebugID_1 = getNextDebugID$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -14157,14 +13527,6 @@ function getIteratorFn$4(maybeIterable) {
 
 var getIteratorFn_1$2 = getIteratorFn$4;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var ReactCurrentOwner$7 = ReactCurrentOwner_1;
@@ -14329,14 +13691,6 @@ function traverseAllChildren$3(children, callback, traverseContext) {
 
 var traverseAllChildren_1$2 = traverseAllChildren$3;
 
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var ReactReconciler$4 = ReactReconciler_1;
@@ -14478,15 +13832,6 @@ var ReactChildReconciler$1 = {
 
 var ReactChildReconciler_1 = ReactChildReconciler$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
 'use strict';
 
 var KeyEscapeUtils$5 = KeyEscapeUtils_1$2;
@@ -14549,14 +13894,6 @@ function flattenChildren$2(children, selfDebugID) {
 }
 
 var flattenChildren_1 = flattenChildren$2;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -14992,14 +14329,6 @@ var ReactMultiChild$1 = {
 
 var ReactMultiChild_1 = ReactMultiChild$1;
 
-/**
- * Copyright (c) 2015-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var ReactCurrentOwner$8 = ReactCurrentOwner_1;
@@ -15222,15 +14551,6 @@ var ReactUpdateQueue$1 = {
 
 var ReactUpdateQueue_1 = ReactUpdateQueue$1;
 
-/**
- * Copyright (c) 2015-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
 'use strict';
 
 function _classCallCheck$1(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -15359,14 +14679,6 @@ var ReactServerUpdateQueue$1 = function () {
 
 var ReactServerUpdateQueue_1 = ReactServerUpdateQueue$1;
 
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var _assign$15 = index;
@@ -15446,14 +14758,6 @@ _assign$15(ReactServerRenderingTransaction$1.prototype, Transaction$3, Mixin);
 PooledClass$7.addPoolingTo(ReactServerRenderingTransaction$1);
 
 var ReactServerRenderingTransaction_1 = ReactServerRenderingTransaction$1;
-
-/**
- * Copyright (c) 2015-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -15815,16 +15119,6 @@ var validateDOMNesting$1 = emptyFunction$8;
 }
 
 var validateDOMNesting_1 = validateDOMNesting$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
-/* global hasOwnProperty:true */
 
 'use strict';
 
@@ -16827,14 +16121,6 @@ _assign$7(ReactDOMComponent$1.prototype, ReactDOMComponent$1.Mixin, ReactMultiCh
 
 var ReactDOMComponent_1 = ReactDOMComponent$1;
 
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var _assign$17 = index;
@@ -16884,14 +16170,6 @@ _assign$17(ReactDOMEmptyComponent$1.prototype, {
 });
 
 var ReactDOMEmptyComponent_1 = ReactDOMEmptyComponent$1;
-
-/**
- * Copyright (c) 2015-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -17016,14 +16294,6 @@ var ReactDOMTreeTraversal$1 = {
   traverseTwoPhase: traverseTwoPhase,
   traverseEnterLeave: traverseEnterLeave
 };
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -17175,14 +16445,6 @@ _assign$18(ReactDOMTextComponent$1.prototype, {
 });
 
 var ReactDOMTextComponent_1 = ReactDOMTextComponent$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -17354,14 +16616,6 @@ function getUnboundedScrollPosition$1(scrollable) {
 
 var getUnboundedScrollPosition_1 = getUnboundedScrollPosition$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var _assign$20 = index;
@@ -17507,14 +16761,6 @@ var ReactEventListener$1 = {
 
 var ReactEventListener_1 = ReactEventListener$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var DOMProperty$5 = DOMProperty_1;
@@ -17610,14 +16856,6 @@ function getNodeForCharacterOffset$1(root, offset) {
 }
 
 var getNodeForCharacterOffset_1 = getNodeForCharacterOffset$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -17942,14 +17180,6 @@ function getActiveElement$1(doc) /*?DOMElement*/{
 
 var getActiveElement_1 = getActiveElement$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var ReactDOMSelection = ReactDOMSelection_1;
@@ -18062,14 +17292,6 @@ var ReactInputSelection$1 = {
 };
 
 var ReactInputSelection_1 = ReactInputSelection$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -18539,14 +17761,6 @@ Object.keys(ATTRS).forEach(function (key) {
 
 var SVGDOMPropertyConfig_1 = SVGDOMPropertyConfig$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var EventPropagators$4 = EventPropagators_1;
@@ -18725,14 +17939,6 @@ var SelectEventPlugin$1 = {
 
 var SelectEventPlugin_1 = SelectEventPlugin$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var SyntheticEvent$7 = SyntheticEvent_1;
@@ -18762,14 +17968,6 @@ SyntheticEvent$7.augmentClass(SyntheticAnimationEvent$1, AnimationEventInterface
 
 var SyntheticAnimationEvent_1 = SyntheticAnimationEvent$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var SyntheticEvent$8 = SyntheticEvent_1;
@@ -18797,14 +17995,6 @@ function SyntheticClipboardEvent$1(dispatchConfig, dispatchMarker, nativeEvent, 
 SyntheticEvent$8.augmentClass(SyntheticClipboardEvent$1, ClipboardEventInterface);
 
 var SyntheticClipboardEvent_1 = SyntheticClipboardEvent$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -18879,14 +18069,6 @@ function getEventCharCode$2(nativeEvent) {
 }
 
 var getEventCharCode_1 = getEventCharCode$2;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -18990,14 +18172,6 @@ function getEventKey$1(nativeEvent) {
 
 var getEventKey_1 = getEventKey$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var SyntheticUIEvent$4 = SyntheticUIEvent_1;
@@ -19072,14 +18246,6 @@ SyntheticUIEvent$4.augmentClass(SyntheticKeyboardEvent$1, KeyboardEventInterface
 
 var SyntheticKeyboardEvent_1 = SyntheticKeyboardEvent$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var SyntheticMouseEvent$3 = SyntheticMouseEvent_1;
@@ -19105,14 +18271,6 @@ function SyntheticDragEvent$1(dispatchConfig, dispatchMarker, nativeEvent, nativ
 SyntheticMouseEvent$3.augmentClass(SyntheticDragEvent$1, DragEventInterface);
 
 var SyntheticDragEvent_1 = SyntheticDragEvent$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -19149,14 +18307,6 @@ SyntheticUIEvent$5.augmentClass(SyntheticTouchEvent$1, TouchEventInterface);
 
 var SyntheticTouchEvent_1 = SyntheticTouchEvent$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var SyntheticEvent$9 = SyntheticEvent_1;
@@ -19185,14 +18335,6 @@ function SyntheticTransitionEvent$1(dispatchConfig, dispatchMarker, nativeEvent,
 SyntheticEvent$9.augmentClass(SyntheticTransitionEvent$1, TransitionEventInterface);
 
 var SyntheticTransitionEvent_1 = SyntheticTransitionEvent$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -19234,15 +18376,6 @@ function SyntheticWheelEvent$1(dispatchConfig, dispatchMarker, nativeEvent, nati
 SyntheticMouseEvent$4.augmentClass(SyntheticWheelEvent$1, WheelEventInterface);
 
 var SyntheticWheelEvent_1 = SyntheticWheelEvent$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
 
 'use strict';
 
@@ -19457,14 +18590,6 @@ var SimpleEventPlugin$1 = {
 
 var SimpleEventPlugin_1 = SimpleEventPlugin$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var ARIADOMPropertyConfig = ARIADOMPropertyConfig_1;
@@ -19540,14 +18665,6 @@ function inject() {
 var ReactDefaultInjection$1 = {
   inject: inject
 };
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -19631,14 +18748,6 @@ function adler32$1(data) {
 
 var adler32_1 = adler32$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var adler32 = adler32_1;
@@ -19678,14 +18787,6 @@ var ReactMarkupChecksum$1 = {
 };
 
 var ReactMarkupChecksum_1 = ReactMarkupChecksum$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -20225,14 +19326,6 @@ var ReactMount_1 = ReactMount$1;
 
 var ReactVersion$4 = '15.6.2';
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var ReactNodeTypes$2 = ReactNodeTypes_1;
@@ -20252,14 +19345,6 @@ function getHostComponentFromComposite$2(inst) {
 }
 
 var getHostComponentFromComposite_1 = getHostComponentFromComposite$2;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -20309,27 +19394,11 @@ function findDOMNode$2(componentOrElement) {
 
 var findDOMNode_1 = findDOMNode$2;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var ReactMount$2 = ReactMount_1;
 
 var renderSubtreeIntoContainer$1 = ReactMount$2.renderSubtreeIntoContainer;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -20433,14 +19502,6 @@ var ReactDOMUnknownPropertyHook$1 = {
 
 var ReactDOMUnknownPropertyHook_1 = ReactDOMUnknownPropertyHook$1;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var ReactComponentTreeHook$8 = ReactComponentTreeHook_1;
@@ -20473,14 +19534,6 @@ var ReactDOMNullInputValuePropHook$1 = {
 };
 
 var ReactDOMNullInputValuePropHook_1 = ReactDOMNullInputValuePropHook$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -20564,16 +19617,6 @@ var ReactDOMInvalidARIAHook$1 = {
 };
 
 var ReactDOMInvalidARIAHook_1 = ReactDOMInvalidARIAHook$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
-/* globals __REACT_DEVTOOLS_GLOBAL_HOOK__*/
 
 'use strict';
 
@@ -21244,7 +20287,7 @@ var App = function (_React$Component) {
         react.createElement(Conditional, {
           id: 'conditional1',
           classes: 'defaultConditionalClass',
-          itemsPerSlide: 4,
+          itemsPerSlide: 3,
           options: options
 
         })
