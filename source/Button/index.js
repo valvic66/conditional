@@ -3,14 +3,22 @@ import React from 'react'
 export default class Button extends React.Component {
   getCSSClasses () {
     const classes = [this.props.classes || 'defaultButtonClass']
-
-    return classes
+    if (this.props.isVisible) {
+      classes.push('show')
+    } else {
+      classes.push('hide')
+    }
+    return classes.join(' ')
   }
 
   getLabelCSSClasses () {
     const classes = [this.props.btn_classes || 'defaultButtonLabelClass']
-
-    return classes
+    if (this.props.isVisible) {
+      classes.push('show')
+    } else {
+      classes.push('hide')
+    }
+    return classes.join(' ')
   }
 
   handleClick = (event) => {

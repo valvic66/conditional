@@ -10,13 +10,18 @@ export default class Conditional extends React.Component {
     const { options, itemsPerSlide } = this.props
     const optionsNo = options.length
     const slidesNo = Math.ceil(optionsNo / itemsPerSlide)
-    
+
     this.state = {
       options: options.slice(),
       slideIndex: 1,
       itemsPerSlide: itemsPerSlide,
       optionsNo: options,
-      slidesNo: slidesNo
+      slidesNo: slidesNo,
+      selected: [],
+      isNextVisible: true,
+      isEndVisible: false,
+      isTagsVisible: true,
+      isBrowserVisible: true
     }
   }
 
@@ -32,10 +37,41 @@ export default class Conditional extends React.Component {
 
     if (slideIndex === slidesNo) {
       slideIndex = 1
+      this.setState({
+        isNextVisible: false,
+        isEndVisible: true,
+        isTagsVisible: false,
+        isBrowserVisible: false
+      })
     } else {
       slideIndex += 1
     }
     this.setState({ slideIndex })
+  }
+
+  handleClickEnd (event) {
+    this.props.onSelect(this.state.selected)
+  }
+
+  handleSelect (value) {
+    const { selected, slideIndex } = this.state
+    const selectedLen = selected.length
+
+    if (selectedLen !== slideIndex) {
+      selected.push(value)
+      this.setState({
+        selected
+      })
+    } else {
+      selected.pop()
+      this.setState({
+        selected
+      })
+      selected.push(value)
+      this.setState({
+        selected
+      })
+    }
   }
 
   getOptions () {
@@ -49,8 +85,6 @@ export default class Conditional extends React.Component {
   }
 
   render () {
-    // var selectedFromSlide = this.selectFromSlide()
-    console.log(this.state.slideIndex)
     return (
       <div className={this.getCSSClasses()}>
         <p>SELECT USER TYPE</p>
@@ -58,19 +92,30 @@ export default class Conditional extends React.Component {
         <Tags
           id='tags1'
           options={this.getOptions()}
+          isVisible={this.state.isTagsVisible}
           classes='defaultTagsClass'
-          onSelect={(value) => { console.log(`Selected value => ${value}`) }}
+          onSelect={(value) => { this.handleSelect(value) }}
         />
 
         <Button
           id='btn1'
           label='NEXT STEP'
+          isVisible={this.state.isNextVisible}
           classes='defaultButtonClass'
           onClick={(event) => { this.handleClick(event) }}
         />
 
+        <Button
+          id='btn2'
+          label='SEND'
+          isVisible={this.state.isEndVisible}
+          classes='defaultButtonClass'
+          onClick={(event) => { this.handleClickEnd(event) }}
+        />
+
         <Browser
           id='browser1'
+          isVisible={this.state.isBrowserVisible}
           classes='defaultBrowserClass'
           slidesNo={this.state.slidesNo}
           slideIndex={this.state.slideIndex}

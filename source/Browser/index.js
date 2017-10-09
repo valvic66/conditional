@@ -5,7 +5,12 @@ import BrowserTag from '../BrowserTag'
 export default class Browser extends React.Component {
   getBrowserCSSClasses () {
     const classes = [this.props.classes || 'defaultBrowserClass']
-    return classes
+    if (this.props.isVisible) {
+      classes.push('showBrowser')
+    } else {
+      classes.push('hideBrowser')
+    }
+    return classes.join(' ')
   }
 
   render () {

@@ -10,11 +10,15 @@ export default class Tags extends React.Component {
 
   getTagsCSSClasses () {
     const classes = [this.props.classes || 'defaultTagsClass']
-    return classes
+    if (this.props.isVisible) {
+      classes.push('showTags')
+    } else {
+      classes.push('hideTags')
+    }
+    return classes.join(' ')
   }
 
   handleSelect (event, option, index) {
-    // console.log(event.type, option.label, index)
     var selectedValue = this.state.selectedValue
     selectedValue = option.id
 

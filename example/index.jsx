@@ -19,9 +19,9 @@ class App extends React.Component {
         <Conditional
           id='conditional1'
           classes='defaultConditionalClass'
-          itemsPerSlide={3}
+          itemsPerSlide={2}
           options={options}
-
+          onSelect={(values) => { console.log(values) }}
         />
       </div>
 

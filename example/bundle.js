@@ -19919,7 +19919,12 @@ var Tag = function (_React$Component) {
     }
 
     return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = Tag.__proto__ || Object.getPrototypeOf(Tag)).call.apply(_ref, [this].concat(args))), _this), _this.handleClick = function (event) {
-      _this.props.onClick(event);
+      var onClick = _this.props.onClick;
+
+
+      if (typeof onClick === 'function') {
+        onClick(event);
+      }
     }, _temp), possibleConstructorReturn(_this, _ret);
   }
 
@@ -19997,12 +20002,16 @@ var Tags = function (_React$Component) {
     key: 'getTagsCSSClasses',
     value: function getTagsCSSClasses() {
       var classes = [this.props.classes || 'defaultTagsClass'];
-      return classes;
+      if (this.props.isVisible) {
+        classes.push('showTags');
+      } else {
+        classes.push('hideTags');
+      }
+      return classes.join(' ');
     }
   }, {
     key: 'handleSelect',
     value: function handleSelect(event, option, index) {
-      // console.log(event.type, option.label, index)
       var selectedValue = this.state.selectedValue;
       selectedValue = option.id;
 
@@ -20065,15 +20074,23 @@ var Button = function (_React$Component) {
     key: 'getCSSClasses',
     value: function getCSSClasses() {
       var classes = [this.props.classes || 'defaultButtonClass'];
-
-      return classes;
+      if (this.props.isVisible) {
+        classes.push('show');
+      } else {
+        classes.push('hide');
+      }
+      return classes.join(' ');
     }
   }, {
     key: 'getLabelCSSClasses',
     value: function getLabelCSSClasses() {
       var classes = [this.props.btn_classes || 'defaultButtonLabelClass'];
-
-      return classes;
+      if (this.props.isVisible) {
+        classes.push('show');
+      } else {
+        classes.push('hide');
+      }
+      return classes.join(' ');
     }
   }, {
     key: 'render',
@@ -20114,6 +20131,7 @@ var BrowserTag = function (_React$Component) {
     key: 'getBrowserTagCSSClasses',
     value: function getBrowserTagCSSClasses() {
       var classes = [this.props.classes || 'defaultBrowserTagClass'];
+
       return classes;
     }
   }, {
@@ -20140,7 +20158,12 @@ var Browser = function (_React$Component) {
     key: 'getBrowserCSSClasses',
     value: function getBrowserCSSClasses() {
       var classes = [this.props.classes || 'defaultBrowserClass'];
-      return classes;
+      if (this.props.isVisible) {
+        classes.push('showBrowser');
+      } else {
+        classes.push('hideBrowser');
+      }
+      return classes.join(' ');
     }
   }, {
     key: 'render',
@@ -20189,7 +20212,12 @@ var Conditional = function (_React$Component) {
       slideIndex: 1,
       itemsPerSlide: itemsPerSlide,
       optionsNo: options,
-      slidesNo: slidesNo
+      slidesNo: slidesNo,
+      selected: [],
+      isNextVisible: true,
+      isEndVisible: false,
+      isTagsVisible: true,
+      isBrowserVisible: true
     };
     return _this;
   }
@@ -20209,10 +20237,46 @@ var Conditional = function (_React$Component) {
 
       if (slideIndex === slidesNo) {
         slideIndex = 1;
+        this.setState({
+          isNextVisible: false,
+          isEndVisible: true,
+          isTagsVisible: false,
+          isBrowserVisible: false
+        });
       } else {
         slideIndex += 1;
       }
       this.setState({ slideIndex: slideIndex });
+    }
+  }, {
+    key: 'handleClickEnd',
+    value: function handleClickEnd(event) {
+      this.props.onSelect(this.state.selected);
+    }
+  }, {
+    key: 'handleSelect',
+    value: function handleSelect(value) {
+      var _state = this.state,
+          selected = _state.selected,
+          slideIndex = _state.slideIndex;
+
+      var selectedLen = selected.length;
+
+      if (selectedLen !== slideIndex) {
+        selected.push(value);
+        this.setState({
+          selected: selected
+        });
+      } else {
+        selected.pop();
+        this.setState({
+          selected: selected
+        });
+        selected.push(value);
+        this.setState({
+          selected: selected
+        });
+      }
     }
   }, {
     key: 'getOptions',
@@ -20230,8 +20294,6 @@ var Conditional = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      // var selectedFromSlide = this.selectFromSlide()
-      console.log(this.state.slideIndex);
       return react.createElement(
         'div',
         { className: this.getCSSClasses() },
@@ -20243,21 +20305,33 @@ var Conditional = function (_React$Component) {
         react.createElement(Tags, {
           id: 'tags1',
           options: this.getOptions(),
+          isVisible: this.state.isTagsVisible,
           classes: 'defaultTagsClass',
           onSelect: function onSelect(value) {
-            console.log('Selected value => ' + value);
+            _this2.handleSelect(value);
           }
         }),
         react.createElement(Button, {
           id: 'btn1',
           label: 'NEXT STEP',
+          isVisible: this.state.isNextVisible,
           classes: 'defaultButtonClass',
           onClick: function onClick(event) {
             _this2.handleClick(event);
           }
         }),
+        react.createElement(Button, {
+          id: 'btn2',
+          label: 'SEND',
+          isVisible: this.state.isEndVisible,
+          classes: 'defaultButtonClass',
+          onClick: function onClick(event) {
+            _this2.handleClickEnd(event);
+          }
+        }),
         react.createElement(Browser, {
           id: 'browser1',
+          isVisible: this.state.isBrowserVisible,
           classes: 'defaultBrowserClass',
           slidesNo: this.state.slidesNo,
           slideIndex: this.state.slideIndex
@@ -20287,9 +20361,11 @@ var App = function (_React$Component) {
         react.createElement(Conditional, {
           id: 'conditional1',
           classes: 'defaultConditionalClass',
-          itemsPerSlide: 3,
-          options: options
-
+          itemsPerSlide: 2,
+          options: options,
+          onSelect: function onSelect(values) {
+            console.log(values);
+          }
         })
       );
     }

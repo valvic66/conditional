@@ -88,6 +88,28 @@ p {
   border: #428efe solid 1px;
 }
 
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+.hideTags {
+  display: none;
+}
+.showTags {
+  display: table;
+}
+
+.hideBrowser {
+  visibility: hidden;
+}
+
+.showBrowser {
+  display: block;
+}
+
 .defaultButtonLabelClass {
   line-height: 43px;
   font-size: 0.7em;

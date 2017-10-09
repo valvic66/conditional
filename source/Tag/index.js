@@ -22,7 +22,11 @@ export default class Tag extends React.Component {
   }
 
   handleClick = (event) => {
-    this.props.onClick(event)
+    const { onClick } = this.props
+
+    if (typeof onClick === 'function') {
+      onClick(event)
+    }
   }
 
   render () {
