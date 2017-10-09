@@ -20042,36 +20042,36 @@ var Tags = function (_React$Component) {
   return Tags;
 }(react.Component);
 
-var Btn = function (_React$Component) {
-  inherits(Btn, _React$Component);
+var Button = function (_React$Component) {
+  inherits(Button, _React$Component);
 
-  function Btn() {
+  function Button() {
     var _ref;
 
     var _temp, _this, _ret;
 
-    classCallCheck(this, Btn);
+    classCallCheck(this, Button);
 
     for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = Btn.__proto__ || Object.getPrototypeOf(Btn)).call.apply(_ref, [this].concat(args))), _this), _this.handleClick = function (event) {
+    return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = Button.__proto__ || Object.getPrototypeOf(Button)).call.apply(_ref, [this].concat(args))), _this), _this.handleClick = function (event) {
       _this.props.onClick(event);
     }, _temp), possibleConstructorReturn(_this, _ret);
   }
 
-  createClass$2(Btn, [{
-    key: 'getBtnCSSClasses',
-    value: function getBtnCSSClasses() {
-      var classes = [this.props.classes || 'defaultBtnClass'];
+  createClass$2(Button, [{
+    key: 'getCSSClasses',
+    value: function getCSSClasses() {
+      var classes = [this.props.classes || 'defaultButtonClass'];
 
       return classes;
     }
   }, {
-    key: 'getBtnLabelCSSClasses',
-    value: function getBtnLabelCSSClasses() {
-      var classes = [this.props.btn_classes || 'defaultBtnLabelClass'];
+    key: 'getLabelCSSClasses',
+    value: function getLabelCSSClasses() {
+      var classes = [this.props.btn_classes || 'defaultButtonLabelClass'];
 
       return classes;
     }
@@ -20084,7 +20084,7 @@ var Btn = function (_React$Component) {
         'div',
         {
           id: this.props.id,
-          className: this.getBtnCSSClasses(),
+          className: this.getCSSClasses(),
           onClick: function onClick(event) {
             return _this2.handleClick(event);
           }
@@ -20092,14 +20092,14 @@ var Btn = function (_React$Component) {
         react.createElement(
           'div',
           {
-            className: this.getBtnLabelCSSClasses()
+            className: this.getLabelCSSClasses()
           },
           this.props.label
         )
       );
     }
   }]);
-  return Btn;
+  return Button;
 }(react.Component);
 
 var BrowserTag = function (_React$Component) {
@@ -20177,8 +20177,10 @@ var Conditional = function (_React$Component) {
 
     var _this = possibleConstructorReturn(this, (Conditional.__proto__ || Object.getPrototypeOf(Conditional)).call(this, props));
 
-    var options = _this.props.options || [];
-    var itemsPerSlide = _this.props.itemsPerSlide || [];
+    var _this$props = _this.props,
+        options = _this$props.options,
+        itemsPerSlide = _this$props.itemsPerSlide;
+
     var optionsNo = options.length;
     var slidesNo = Math.ceil(optionsNo / itemsPerSlide);
 
@@ -20210,9 +20212,7 @@ var Conditional = function (_React$Component) {
       } else {
         slideIndex += 1;
       }
-      this.setState({
-        slideIndex: slideIndex
-      });
+      this.setState({ slideIndex: slideIndex });
     }
   }, {
     key: 'getOptions',
@@ -20248,10 +20248,10 @@ var Conditional = function (_React$Component) {
             console.log('Selected value => ' + value);
           }
         }),
-        react.createElement(Btn, {
+        react.createElement(Button, {
           id: 'btn1',
           label: 'NEXT STEP',
-          classes: 'defaultBtnClass',
+          classes: 'defaultButtonClass',
           onClick: function onClick(event) {
             _this2.handleClick(event);
           }
@@ -20279,7 +20279,7 @@ var App = function (_React$Component) {
   createClass$2(App, [{
     key: 'render',
     value: function render() {
-      var options = [{ id: 'tag1', imgSrc: '../example/assets/search.svg', label: 'SEARCH1' }, { id: 'tag2', imgSrc: '../example/assets/zoom-in.svg', label: 'ZOOM IN1' }, { id: 'tag3', imgSrc: '../example/assets/zoom-out.svg', label: 'ZOOM OUT1' }, { id: 'tag4', imgSrc: '../example/assets/zoom-in.svg', label: 'ZOOM IN2' }, { id: 'tag5', imgSrc: '../example/assets/zoom-out.svg', label: 'ZOOM OUT2' }, { id: 'tag6', imgSrc: '../example/assets/search.svg', label: 'SEARCH2' }];
+      var options = [{ id: 'tag1', imgSrc: 'https://cdn.rawgit.com/valvic66/conditional/20a2cb22/example/assets/search.svg', label: 'SEARCH1' }, { id: 'tag2', imgSrc: 'https://cdn.rawgit.com/valvic66/conditional/20a2cb22/example/assets/zoom-in.svg', label: 'ZOOM IN1' }, { id: 'tag3', imgSrc: 'https://cdn.rawgit.com/valvic66/conditional/20a2cb22/example/assets/zoom-out.svg', label: 'ZOOM OUT1' }, { id: 'tag4', imgSrc: 'https://cdn.rawgit.com/valvic66/conditional/20a2cb22/example/assets/zoom-in.svg', label: 'ZOOM IN2' }, { id: 'tag5', imgSrc: 'https://cdn.rawgit.com/valvic66/conditional/20a2cb22/example/assets/zoom-out.svg', label: 'ZOOM OUT2' }, { id: 'tag6', imgSrc: 'https://cdn.rawgit.com/valvic66/conditional/20a2cb22/example/assets/search.svg', label: 'SEARCH2' }];
 
       return react.createElement(
         'div',

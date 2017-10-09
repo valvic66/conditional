@@ -3,7 +3,7 @@ body {
 }
 
 .presentationDiv {
-  width: 50%;
+  width: 30%;
   margin: 0 auto;
 }
 
@@ -48,7 +48,7 @@ p {
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
 .defaultTagImgClassSelected {
-  border: solid #428efe 2px;
+  border: solid #428efe 1px;
   padding: 30px;
   display: block;
   margin: 0 auto;
@@ -59,7 +59,7 @@ p {
   position: relative;
   margin-top: 20px;
 }
-.defaultTagLabelClass{
+.defaultTagLabelClass {
   display: block;
   text-align: center;
   position: relative;
@@ -67,7 +67,7 @@ p {
   font-size: .8em;
   }
 
-.defaultBtnClass {
+.defaultButtonClass {
   display: block;
   /* width: 100%; */
   height: 2.5em;
@@ -83,12 +83,12 @@ p {
   border: solid grey 1px;
   cursor: pointer;
 }
-.defaultBtnClass:hover {
+.defaultButtonClass:hover {
   background-color: lightgray;
   border: #428efe solid 1px;
 }
 
-.defaultBtnLabelClass {
+.defaultButtonLabelClass {
   line-height: 43px;
   font-size: 0.7em;
 }
